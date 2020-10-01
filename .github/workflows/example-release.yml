@@ -1,0 +1,14 @@
+name: Example Release Workflow
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Create a new release
+        run: |
+          echo "${{ github.event.release }}"
