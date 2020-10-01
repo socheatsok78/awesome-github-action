@@ -15,3 +15,9 @@ jobs:
           echo "github.event.release: ${{ toJson(github.event.release) }}"
           echo "github.event.release.released: ${{ github.event.release.released }}"
           echo "github.event.release.prereleased: ${{ github.event.release.prereleased }}"
+      - name: Pre-Release
+        if: "github.event.release.prerelease"
+        run: echo "Running on Pre-Release event"
+      - name: Release
+        if: "!github.event.release.prerelease"
+        run: echo "Running on Release event"
