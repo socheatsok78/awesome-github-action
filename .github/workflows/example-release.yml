@@ -1,6 +1,7 @@
 name: Example Release Workflow
 
 on:
+  workflow_dispatch:
   release:
     types: [published]
 
